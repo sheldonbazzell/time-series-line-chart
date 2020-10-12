@@ -18,11 +18,12 @@ type TooltipData = string;
 const offset = 18;
 const tooltipStyles = {
   ...defaultStyles,
-  backgroundColor: "rgba(53,71,125,0.8)",
-  color: "white",
-  width: 175,
-  height: 72,
+  backgroundColor: "#fff",
+  color: "#000",
+  width: 180,
+  fontFamily: "Arial",
   padding: 12,
+  lineHeight: "22px",
 };
 
 export default function Tooltip({
@@ -76,7 +77,7 @@ export default function Tooltip({
       showTooltip({
         tooltipLeft: containerX,
         tooltipTop: containerY,
-        tooltipData: `${formatFullDate(date)} Value: ${value}`,
+        tooltipData: `${formatFullDate(date)}\nValue: ${value}`,
       });
     },
     [showTooltip, containerBounds]
@@ -129,6 +130,7 @@ export default function Tooltip({
           border-radius: 16px;
           background: transparent;
           font-size: 14px;
+          font-family: Arial;
           color: white;
           width: 100%;
           height: 100%;
